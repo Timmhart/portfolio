@@ -12,6 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/lightbox.min.css">
+  <script src="https://kit.fontawesome.com/9fdf9f84df.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -22,24 +23,16 @@
         <li>
           <a href="#home">Home</a>
         </li>
-
         <li><a href="#over-tim">Over mij</a>
         </li>
-
         <li><a href="#fotografie">Fotografie</a>
         </li>
-
+        <li><a href="#contactMe">Contact me</a>
+        </li>
         <li><a href="#portfolio">Portfolio</a>
         </li>
       </ul>
     </nav>
-      <!-- <nav id="fixed">
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#over-tim">Over Tim</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-        </ul>
-      </nav> -->
     </header>
 
     <main>
@@ -47,7 +40,19 @@
       <section class="image">
           <section class="container">
             <h1 id="home"><span>Tim Hart</span></h1>
-            <span class="des">Web Developer // UX Designer</span>
+            <span class="des">Web Developer || UX Designer</span>
+
+            <section class="download-cv-section">
+            <a href="/data/data.txt" class="download-cv" download>Download CV</a>
+            </section>
+
+            <section class="socialMedia">
+            <a href=""><i class="fab fa-facebook-f"></i></a>
+            <a href=""><i class="fab fa-instagram"></i></a>
+            <a href=""><i class="fab fa-linkedin-in"></i></a>
+            <a href=""><i class="fab fa-github"></i></a>
+            </section>
+
           </section>
         </section>
       </section>
@@ -55,40 +60,57 @@
 
     <section class="about-me">
       <h2 id="over-tim">Over Tim</h2>
-      <h3>Wie ben ik?</h3>
+      <section class="aboutMe fadeIn">
+          <img src="/images/me.JPG" 
+          alt=""
+          class="slideIn fromLeft">
+            <section class="col">
+              <h5 class="slideIn fromRight">Tim Hart</h5>
+              <p class="slideIn fromRight">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis fugit,
+                quae beatae vero sit magni quaerat id ratione. Dolor optio unde amet
+                omnis sapiente neque cumque consequuntur reiciendis deserunt.
+                Dolorem vero exercitationem consequuntur, eligendi cupiditate
+                debitis facilis quibusdam magni. Eveniet.
+              </p>
+          </section>
+      </section>
 
-      <img src="images/me.JPG" class="dit-ben-ik" alt="Foto van Tim Hart">
-      <ul class="ul-dit-ben-ik">
-        <li><b>Naam:</b> Tim Hart</li>
-        <li><b>Leeftijd:</b> 26 jaar</li>
-        <li><b>Contact:</b> timhart13@live.nl</li>
-        <li><b>LinkedIn:</b> <a class="linkedin" href="https://www.linkedin.com/in/tim-hart-711bb41b8/">Tim Hart</a>
-        <li><b>Instagram:</b> <a class="linkedin" href="https://www.instagram.com/timmhvrt/">Tim Hart</a>
-      </ul>
-      <section class="download-cv-section">
-      <a href="/data/data.txt" class="download-cv" download>Download CV</a>
-    </section>
     </section>
 
-    <article>
+    <article class="fotografie">
     <h2 id="fotografie">Fotografie</h2>
     <section class="gallery">
-      <a href="/images/forest.jpeg" data-lightbox="mygallery" data-title="Test run"><img src="/images/forest.jpeg" alt=""></a>
-      <a href="/images/forest.jpeg" data-lightbox="mygallery"><img src="/images/forest.jpeg" alt=""></a>
-      <a href="/images/forest.jpeg" data-lightbox="mygallery"><img src="/images/forest.jpeg" alt=""></a>
-      <a href="/images/forest.jpeg" data-lightbox="mygallery"><img src="/images/forest.jpeg" alt=""></a>
-      <a href="/images/forest.jpeg" data-lightbox="mygallery"><img src="/images/forest.jpeg" alt=""></a>
-      <a href="/images/forest.jpeg" data-lightbox="mygallery"><img src="/images/forest.jpeg" alt=""></a>
-      <a href="/images/forest.jpeg" data-lightbox="mygallery"><img src="/images/forest.jpeg" alt=""></a>
-      <a href="/images/forest.jpeg" data-lightbox="mygallery"><img src="/images/forest.jpeg" alt=""></a>
-      <a href="/images/forest.jpeg" data-lightbox="mygallery"><img src="/images/forest.jpeg" alt=""></a>
-      <a href="/images/forest.jpeg" data-lightbox="mygallery"><img src="/images/forest.jpeg" alt=""></a>
-      <a href="/images/forest.jpeg" data-lightbox="mygallery"><img src="/images/forest.jpeg" alt=""></a>
-      <a href="/images/forest.jpeg" data-lightbox="mygallery"><img src="/images/forest.jpeg" alt=""></a>
+      <a href="/images/trees.jpg" data-lightbox="mygallery" data-title="First picture made by myself!"><img src="/images/trees.jpg" alt=""></a>
+      <a href="/images/sky.jpeg" data-lightbox="mygallery"><img src="/images/sky.jpeg" alt=""></a>
+      <a href="/images/gracht.jpeg" data-lightbox="mygallery"><img src="/images/gracht.jpeg" alt=""></a>
+      <a href="/images/bycicle.jpeg" data-lightbox="mygallery"><img src="/images/bycicle.jpeg" alt=""></a>
+      <a href="/images/manonstage.jpeg" data-lightbox="mygallery"><img src="/images/manonstage.jpeg" alt=""></a>
+      <a href="/images/flowers.jpg" data-lightbox="mygallery"><img src="/images/flowers.jpg" alt=""></a>
+      <a href="/images/ledstage.jpeg" data-lightbox="mygallery"><img src="/images/ledstage.jpeg" alt=""></a>
+      <a href="/images/dog.jpeg" data-lightbox="mygallery"><img src="/images/dog.jpeg" alt=""></a>
+      <a href="/images/sandwich.jpeg" data-lightbox="mygallery"><img src="/images/sandwich.jpeg" alt=""></a>
+      <a href="/images/porksteak.jpeg" data-lightbox="mygallery"><img src="/images/porksteak.jpeg" alt=""></a>
+      <a href="/images/beers.jpeg" data-lightbox="mygallery"><img src="/images/beers.jpeg" alt=""></a>
+      <a href="/images/stage.jpeg" data-lightbox="mygallery"><img src="/images/stage.jpeg" alt=""></a>
     </section>
   </article>
     
+  <article>
+      <h2 id="contactMe">Contact me</h2>
+      <section class="form-container">
+      <form action="" class="contact-form">
+       
+        <input type="text" id="name" placeholder="Full name">
+        <input type="email" id="email" placeholder="Email">
+        <input type="text" id="subject" placeholder="Subject">
+        <textarea name="message" placeholder="Message" id="message" cols="30" rows="10"></textarea>
+        <input type="submit" class="submit" value="send message">
+      </form>
+    </section>
+  </article>  
 </main>
+
 
 
 <footer>Copyright Tim Hart</footer>

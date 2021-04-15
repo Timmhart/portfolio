@@ -1,0 +1,320 @@
+body, html {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* css van de gradient  */
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.gradient {
+  	animation: gradient 15s ease infinite;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+}
+
+.image {
+  position: relative;
+  height: 685px;
+  background-size: cover;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.container h1 {
+  font-size: 2.4em;
+  letter-spacing: 0.2em;
+  margin: 0;
+}
+
+.container h1 span {
+  border: 10px solid white;
+  padding: 6px 14px;
+  display: inline-block;
+  font-weight: 700;
+}
+
+.des {
+  margin: 20px;
+  display: block;
+  font-size: 26px;
+
+}
+
+.socialMedia {
+  margin-top: 2em;
+}
+
+.socialMedia>a {
+  margin: 0 1em;
+  font-size: 2em;
+  color: white;
+  display: inline-block;
+}
+
+.socialMedia>a:hover {
+  animation: hoverGradient 2s ease infinite;
+  position: relative;
+}
+
+@keyframes hoverGradient {
+  0% {
+    transform: translate(0, 0)
+	}
+	50% {
+		transform: translate(0, -15px);
+	}
+	100% {
+		transform: translate(0, 0);
+	}
+}
+/* einde css gradient  */
+
+/* css van de nav/header  */
+
+header {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  z-index: 1;
+  transition: 250ms ease-in;
+  width: 100%;
+}
+
+header a.logo {
+  color: white;
+  text-decoration: none;
+  margin: .4em 0 0 4em;
+  font-size: 1.5em;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: 3px solid white;
+  padding: .4em .4em 0 .3em;
+  letter-spacing: -3px;
+}
+
+header nav ul {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  margin-left: 6em;
+  margin-top: 2em;
+}
+
+@media only screen and (max-width: 600px) {
+  header nav ul {
+    margin-left: 0;
+  }
+  header a.logo {
+    margin: 0;
+  }
+  header nav ul li a {
+    padding: 0;
+  }
+}
+
+nav ul li {
+  list-style-type: none;
+  font-weight: 700;
+}
+
+
+header nav ul li a {
+  text-decoration: none;
+  color: white;
+  margin: 0 3em;
+}
+
+nav {
+  transition: 1s;
+}
+
+.nav-scrolled {
+  background-color: lightgrey;
+  color: black;
+  width: 100%;
+  transition: .4s ease-in-out;
+  padding-bottom: 1em;
+}
+
+
+
+h2 {
+  font-size: 3em;
+  letter-spacing: .2em;
+  text-align: center;
+}
+
+h3 {
+  font-family: "Nerko One", sans-serif;
+  font-size: 2.5em;
+}
+
+.about-me {
+  /* text-align: center; */
+  margin-top: 5em;
+  margin-bottom: 6em;
+}
+
+.aboutMe {
+    padding: 1em 0;
+    display: flex;
+    flex-direction: row;
+    margin-left: 20em;
+  }
+
+.col {
+    display: flex;
+    flex-direction: column;
+  }
+
+.col>p {
+    width: 50%;
+  }
+
+.fadeIn {
+  opacity: 0;
+  transition: opacity 250ms ease-in;
+}
+
+.fadeIn.appear {
+  opacity: 1;
+}
+
+.aboutMe>img {
+  width: 20%;
+  height: auto;
+  margin: 0 5em;
+  transition: 1s ease-in-out;
+}
+
+.aboutMe>img:hover {
+  border-radius: 10px;
+  transition: 1s ease-in-out;
+  transform: scale(1.1);
+}
+
+/* css om voor de cv download knop */
+.download-cv-section {
+  margin-top: 2em;
+}
+
+.download-cv {
+  text-decoration: none;
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  padding: .8em 3em;
+  margin-left: 1.5em;
+  position: relative;
+  font-weight: 700;
+}
+
+.download-cv:hover {
+  background-color: rgba(255, 255, 255, .5);
+}
+
+
+/* gallery css */
+.gallery {
+  margin: 10px 200px 50px 200px;
+}
+
+.gallery img {
+  width: 20%;
+  height: auto;
+  transition: 1s;
+  padding: 15px;
+  filter: grayscale(100%);
+}
+
+article.fotografie {
+  background-color: lightgrey;
+  padding-top: 1em;
+}
+
+.gallery img:hover {
+  filter: grayscale(0);
+  transform: scale(1.1);
+  border-radius: 50px;
+}
+
+/* css voor de contact form  */
+
+.form-container {
+  position: relative;
+  left: 20%;
+  width: 60%;
+  height: 100vh;
+  background-color: #fff;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 600px;
+
+}
+
+input,
+textarea {
+  width: 100%;
+  margin-top: 2rem;
+  border: none;
+  outline: 0;
+  border-bottom: 1px solid #000;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.submit {
+  border: 1px solid #000;
+  padding: 1rem;
+  text-align: center;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.submit:hover {
+  opacity: 0.6;
+}
+
+
+/* css voor de footer  */
+
+footer {
+  text-align: center;
+}
+
+
+
+
+
+
+
+
