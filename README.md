@@ -5,57 +5,26 @@
 
 ## Table of Contents
 
-* [Introduction](https://github.com/Timmhart/portfolio/Portfolio-Tim-Hart)
-* [Installatie](https://github.com/Timmhart/Tech3bv2#hoe-te-installeren)
-* [Features](https://github.com/Timmhart/Tech3bv2#features)
-* [License](https://github.com/Timmhart/Tech3bv2#license)
-* [Bronnen](https://github.com/Timmhart/Tech3bv2#bronnen)
+* [Introduction](https://github.com/Timmhart/portfolio#portfolio-tim-hart)
+* [Wiki](https://github.com/Timmhart/portfolio#wiki)
+* [License](https://github.com/Timmhart/portfolio#license)
+* [Sources](https://github.com/Timmhart/portfolio#sources)
 
-## Hoe te installeren
+## Wiki
 
-### Installatie
-
-Stap 1. Clone deze reposotiry
-```js
-git clone https://github.com/Timmhart/Tech3bv2.git
-```
-Stap 2. Navigeer naar de zojuist geclonde reposotiry *Let op hoofdlettergevoelig*
-```js
-cd blokTech/
-```
-Stap 3. Installeer de npm (Node package manager)
-```js
-npm install
-```
-
-### Database connectie
-Stap 1. Installeer MongoDB en MongoDBcompass en zet een database op, [stappenplan](https://docs.atlas.mongodb.com/getting-started/) (*Als je dit al hebt kan je deze stap overslaan*)
-
-Stap 2.
-Wijzig het wachtwoord en gebruiksnaam naar jouw gegevens
-**code**
-  
-Stap 3.
-verander de .env_example file naar .env
-**code**
-
-### Starten
-
-Start nu npm (Node package manager)
-```js
-npm start
-```
-
-## Features
-
-Binnen de applicatie kunnen gebruikers filteren op verschillende stats, namelijk k/d ratio, wins en score. Hiermee is kunnen ze 
-spelers vinden naar eigen behoefte. Voor meer features zie de [wiki](https://github.com/Timmhart/Tech3bv2/wiki/Concept)
+In my [wiki](https://github.com/Timmhart/portfolio/wiki) you can find different things such as:
+* How I build my website step by step
+* What programs I used
+* What my sources are
+* How and why made my photographs
 
 ## License
 
-Er wordt in dit project gebruik gemaakt van de [MIT](https://github.com/Timmhart/Tech3bv2/blob/main/LICENSE) license.
+Er wordt in dit project gebruik gemaakt van de [MIT](https://github.com/Timmhart/portfolio/blob/main/LICENSE) license.
 
-## Bronnen
+## Sources
 
-* [Wes Bos](https://www.youtube.com/watch?v=Je5w18nn-e8&list=PLu8EoSxDXHP7v7K5nZSMo9XWidbJ_Bns3)
+For this readMe file I've used this source below:
 * [Markdown cheat sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+
+For more sources ( I have a lot of them :) ) please click [here](https://github.com/Timmhart/wiki)  <----- Nog aanpassen!!
