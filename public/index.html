@@ -13,26 +13,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/lightbox.min.css">
   <script src="https://kit.fontawesome.com/9fdf9f84df.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
 <body>
   <header>
-    <a href="index.html" class="logo">th</a>
-    <nav>
-      <ul>
-        <li>
-          <a href="#home">Home</a>
-        </li>
-        <li><a href="#over-tim">Over mij</a>
-        </li>
-        <li><a href="#fotografie">Fotografie</a>
-        </li>
-        <li><a href="#contactMe">Contact me</a>
-        </li>
-        <li><a href="#portfolio">Portfolio</a>
-        </li>
-      </ul>
-    </nav>
+      <h2 class="logo">th</h2>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <nav>
+        <ul>
+          <li><a href="#over-tim">About me</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#fotografie">Photography</a></li>
+          <li><a href="#contactMe">Contact</a></li>
+        </ul>
+      </nav>  
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+      </label>  
     </header>
 
     <main>
@@ -59,36 +57,47 @@
 
 
     <section class="about-me">
-      <h2 id="over-tim">Over Tim</h2>
+      <h2 id="over-tim" class="heading">Meet Tim</h2>
       <section class="aboutMe fadeIn">
           <img src="/images/me.JPG" 
           alt=""
           class="slideIn fromLeft">
-            <section class="col">
-              <h5 class="slideIn fromRight">Tim Hart</h5>
-              <p class="slideIn fromRight">
+            <section class="col fadeIn">
+              <h5>Tim Hart</h5>
+              <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis fugit,
                 quae beatae vero sit magni quaerat id ratione. Dolor optio unde amet
                 omnis sapiente neque cumque consequuntur reiciendis deserunt.
                 Dolorem vero exercitationem consequuntur, eligendi cupiditate
                 debitis facilis quibusdam magni. Eveniet.
               </p>
-          </section>
+          </section>   
       </section>
 
+      <section class="col fadeIn">
+        <h3>Development skills</h3>
+        <div class="chart">
+          <ul class="bars">
+            <li><div class="bar" data-percentage="40"></div><span>Javascript</span></li>
+            <li><div class="bar" data-percentage="20"></div><span>JQuery</span></li>
+            <li><div class="bar" data-percentage="70"></div><span>HTML</span></li>
+            <li><div class="bar" data-percentage="70"></div><span>CSS</span></li>
+            <li><div class="bar" data-percentage="40"></div><span>NodeJS</span></li>
+            <li><div class="bar" data-percentage="40"></div><span>MongoDB</span></li>
+          </ul>
+        </div>
+      </section>
     </section>
 
     <article class="fotografie">
-    <h2 id="fotografie">Fotografie</h2>
+    <h2 id="fotografie" class="heading">Photography</h2>
     <section class="gallery">
       <a href="/images/trees.jpg" data-lightbox="mygallery" data-title="First picture made by myself!"><img src="/images/trees.jpg" alt=""></a>
       <a href="/images/sky.jpeg" data-lightbox="mygallery"><img src="/images/sky.jpeg" alt=""></a>
       <a href="/images/gracht.jpeg" data-lightbox="mygallery"><img src="/images/gracht.jpeg" alt=""></a>
       <a href="/images/bycicle.jpeg" data-lightbox="mygallery"><img src="/images/bycicle.jpeg" alt=""></a>
-      <a href="/images/manonstage.jpeg" data-lightbox="mygallery"><img src="/images/manonstage.jpeg" alt=""></a>
       <a href="/images/flowers.jpg" data-lightbox="mygallery"><img src="/images/flowers.jpg" alt=""></a>
       <a href="/images/ledstage.jpeg" data-lightbox="mygallery"><img src="/images/ledstage.jpeg" alt=""></a>
-      <a href="/images/dog.jpeg" data-lightbox="mygallery"><img src="/images/dog.jpeg" alt=""></a>
       <a href="/images/sandwich.jpeg" data-lightbox="mygallery"><img src="/images/sandwich.jpeg" alt=""></a>
       <a href="/images/porksteak.jpeg" data-lightbox="mygallery"><img src="/images/porksteak.jpeg" alt=""></a>
       <a href="/images/beers.jpeg" data-lightbox="mygallery"><img src="/images/beers.jpeg" alt=""></a>
@@ -97,7 +106,7 @@
   </article>
     
   <article>
-      <h2 id="contactMe">Contact me</h2>
+      <h2 id="contactMe" class="heading">Contact me</h2>
       <section class="form-container">
       <form action="" class="contact-form">
        
@@ -116,6 +125,7 @@
 <footer>Copyright Tim Hart</footer>
 <script src="/js/lightbox-plus-jquery.min.js"></script>
 <script src="/js/portfolio.js"></script>
+
 </body>
 
 </html>

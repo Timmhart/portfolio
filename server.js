@@ -1,10 +1,14 @@
-const port = 3000;
+const port = process.env.PORT || 3000;
+const host = process.env.PORT || 3000;
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
 const nodemailer = require("nodemailer");
+const dotenv = require('dotenv').config();
 
 app.use(express.static('public'));
 app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: false}));
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html')
@@ -19,13 +23,13 @@ app.post('/', (req, res) => {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'timmhart1@gmail.com',
-            pass: 'Pieter16'
+            user: process.env.MAIL_USERNAME,
+            pass: process.env.MAIL_PASS
         }
     })
 
     const mailOptions = {
-        from: req.body.email,
+        from: `${req.body.name}`,
         to: 'timhart13@live.nl',
         subject: `Subject from ${req.body.email}: ${req.body.subject}`,
         text: req.body.message
@@ -42,6 +46,6 @@ app.post('/', (req, res) => {
     })
 });
 
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}!`);
+app.listen(port, host, () => {
+    console.log(`Example app listening on port ${host} ${port}!`);
 });

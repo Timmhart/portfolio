@@ -1,10 +1,12 @@
 // Script voor het bewerken van de 
 // nav na de eerste section 
 
+const navScroll = document.querySelector('nav')
 const header = document.querySelector("header");
 const sectionOne = document.querySelector(".gradient");
 
 const faders = document.querySelectorAll('.fadeIn');
+const sliders = document.querySelectorAll('.slideIn');
 
 const sectionOneOptions = {
   rootMargin: "-200px 0px 0px 0px"
@@ -17,8 +19,10 @@ const sectionOneObserver = new IntersectionObserver(function(
     entries.forEach(entry => {
       if(!entry.isIntersecting) {
         header.classList.add("nav-scrolled");
+        navScroll.classList.add("nav-scrolled");
       } else {
         header.classList.remove("nav-scrolled");
+        navScroll.classList.remove("nav-scrolled");
       }
     });
 }, 
@@ -26,7 +30,10 @@ sectionOneOptions);
 
 sectionOneObserver.observe(sectionOne);
 
-const appearOptions = {};
+const appearOptions = {
+  threshold: 0,
+  rootMargin: "0px 0px -250px 0px"
+};
 
 const appearOnScroll = new IntersectionObserver
 (function(
@@ -42,10 +49,14 @@ const appearOnScroll = new IntersectionObserver
     }
   })
 }, 
-options);
+appearOptions);
 
 faders.forEach(fader => {
   appearOnScroll.observe(fader);
+})
+
+sliders.forEach(slider => {
+  appearOnScroll.observe(slider);
 })
 
 // Javascript voor het contactformulier 
@@ -86,10 +97,13 @@ contactForm.addEventListener('submit', (e) => {
 })
 
 
-const names = ['Developer', 'Front-end Developer', 'UX Designer', 'Designer', 'Artist', 'Friend'];
-let i = 0;
+// JS voor de bar charts!
 
-while(i < names.length){
-  console.log(names[i]);
-  i++;
-}
+$(function(){
+  $('.bars li .bar').each(function(key, bar) {
+    const percentage = $(this).data('percentage');
+    $(this).animate({
+      'height' : percentage + '%'
+    },1000);
+  })
+})

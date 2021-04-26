@@ -7,6 +7,15 @@ body, html {
   scroll-behavior: smooth;
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --background: #fff;
+  --greytint: lightgrey;
+}
+
 /* css van de gradient  */
 
 @keyframes gradient {
@@ -96,60 +105,116 @@ body, html {
 /* css van de nav/header  */
 
 header {
-  display: flex;
-  flex-direction: row;
+  /* background: lightgreen; */
   position: fixed;
-  z-index: 1;
-  transition: 250ms ease-in;
   width: 100%;
-}
-
-header a.logo {
-  color: white;
-  text-decoration: none;
-  margin: .4em 0 0 4em;
-  font-size: 1.5em;
-  font-weight: 700;
-  text-transform: uppercase;
-  border: 3px solid white;
-  padding: .4em .4em 0 .3em;
-  letter-spacing: -3px;
-}
-
-header nav ul {
-  display: flex;
-  flex-direction: row;
   text-align: center;
-  margin-left: 6em;
-  margin-top: 2em;
+  z-index: 999;
+  transition: 250ms ease-in;
 }
 
-@media only screen and (max-width: 600px) {
-  header nav ul {
-    margin-left: 0;
+@keyframes logo {
+  0% {
+		transform: rotate(0);
+	}
+	50% {
+    transform: rotate(180deg), scale(2);
   }
-  header a.logo {
-    margin: 0;
-  }
-  header nav ul li a {
-    padding: 0;
-  }
+  100% {
+		transform: rotate(360deg);
+	}
 }
 
-nav ul li {
-  list-style-type: none;
-  font-weight: 700;
-}
-
-
-header nav ul li a {
-  text-decoration: none;
-  color: white;
-  margin: 0 3em;
+.logo {
+  animation: logo 5s ease infinite;
+  text-transform: uppercase;
+  color: var(--background);
 }
 
 nav {
+  position: absolute;
+  text-align: left;
+  top: 99%;
+  left: 0;
+  width: 100%;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 400ms ease-in-out;
   transition: 1s;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  margin-bottom: 1em;
+  margin-left: 1em;
+  font-weight: 700;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+
+nav a:hover {
+  color: black;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1em;
+  color: white;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: white;
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: '';
+  position: absolute;
+}
+
+.nav-toggle-label span::before {
+  bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+  top: 7px;
+}
+
+.nav-toggle:checked ~ nav {
+  transform: scale(1, 1);
+}
+
+.nav-toggle:checked ~ nav a {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out 250ms;
 }
 
 .nav-scrolled {
@@ -158,23 +223,24 @@ nav {
   width: 100%;
   transition: .4s ease-in-out;
   padding-bottom: 1em;
-}
+} 
+/* einde css nav  */
 
 
-
-h2 {
+.heading {
   font-size: 3em;
   letter-spacing: .2em;
   text-align: center;
 }
 
 h3 {
-  font-family: "Nerko One", sans-serif;
+  margin-top: 4em;
   font-size: 2.5em;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .about-me {
-  /* text-align: center; */
   margin-top: 5em;
   margin-bottom: 6em;
 }
@@ -183,7 +249,7 @@ h3 {
     padding: 1em 0;
     display: flex;
     flex-direction: row;
-    margin-left: 20em;
+    transform: translate(20em);
   }
 
 .col {
@@ -197,25 +263,60 @@ h3 {
 
 .fadeIn {
   opacity: 0;
-  transition: opacity 250ms ease-in;
+  transition: opacity 400ms ease-in;
 }
 
 .fadeIn.appear {
   opacity: 1;
 }
 
+.fromLeft {
+  transform: translate(-90%);
+}
+
+.fromRight {
+  transform: translate(90%);
+}
+
+.fromLeft,
+.fromRight {
+  transition: opacity 400ms ease-in, 
+    transform 1s ease-in;
+  opacity: 0;
+}
+
+.fromLeft.appear,
+.fromRight.appear {
+  transform: translateX(0);
+  opacity: 1;
+}
+
 .aboutMe>img {
-  width: 20%;
+  max-width: 100%;
   height: auto;
-  margin: 0 5em;
+  margin: 0 5em 0 0;
   transition: 1s ease-in-out;
 }
 
-.aboutMe>img:hover {
+
+
+.col>h5 {
+  font-size: 2em;
+  margin-top: 0;
+}
+
+.col>h5::after {
+  content: '';
+  background: #000;
+  width: 10px;
+  height: 10px;
+}
+
+/* .aboutMe>img:hover {
   border-radius: 10px;
   transition: 1s ease-in-out;
   transform: scale(1.1);
-}
+} */
 
 /* css om voor de cv download knop */
 .download-cv-section {
@@ -227,7 +328,6 @@ h3 {
   color: white;
   background: rgba(255, 255, 255, 0.2);
   padding: .8em 3em;
-  margin-left: 1.5em;
   position: relative;
   font-weight: 700;
 }
@@ -239,11 +339,18 @@ h3 {
 
 /* gallery css */
 .gallery {
-  margin: 10px 200px 50px 200px;
+  margin: 0.625em 8em 3.125em 8em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.gallery > * {
+  flex: 1 1 15em;
 }
 
 .gallery img {
-  width: 20%;
+  width: 90%;
   height: auto;
   transition: 1s;
   padding: 15px;
@@ -253,6 +360,7 @@ h3 {
 article.fotografie {
   background-color: lightgrey;
   padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 .gallery img:hover {
@@ -312,9 +420,246 @@ footer {
 }
 
 
+.chart {
+  width: 600px;
+  height: 300px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.numbers {
+  margin: 0;
+  padding: 0;
+  width: 50px;
+  height: 100%;
+  display: inline-block;
+  float: left;
+}
+
+.numbers li {
+  list-style: none;
+  height: 150px;
+  position: relative;
+  bottom: 145px;
+
+}
+
+.numbers span {
+  font-size: 12px;
+  font-weight: 600;
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+
+}
+
+.bars {
+  font-size: 12px;
+  font-weight: 600;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  width: 100%;
+  height: 300px;
+  border-radius: 5px;
+}
+
+.bars li {
+  display: table-cell;
+  width: 100px;
+  height: 300px;
+  position: relative;
+}
+
+.bars span {
+  width: 100%;
+  position: absolute;
+  bottom: -30px;
+  text-align: center;
+  color: #000;
+}
+
+.bars .bar {
+  display: block;
+  background: #17c0eb;
+  width: 50px; 
+  position: absolute;
+  border-radius: 5px;
+  bottom: 0;
+  margin-left: 25px;
+  text-align: center;
+  box-shadow: 0 0 10px 0 rgba(23, 192, 235, 0.5);
+  transition: 0.5s;
+  transition-property: background, box-shadow;
+}
+
+.bars .bar:hover {
+  background: #55efc4;
+  box-shadow: 0 0 10px 0 rgba(85, 239, 196, 0.5);
+  cursor: pointer;
+}
+
+.bars .bar::before {
+  color: #555;
+  content: attr(data-percentage) '';
+  position: relative;
+  bottom: 20px;
+}
 
 
 
 
 
+/* @media queries  */
 
+@media screen and (max-width: 987px) {
+  .aboutMe {
+    transform: translate(10em);
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .aboutMe>img {
+    width: 50%;
+    height: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .aboutMe {
+    transform: translate(3em);
+  }
+
+  .gallery {
+    margin: 0.625em 4em 3.125em 4em;
+  }
+
+  .bars {
+    width: 100%;
+  }
+
+  .aboutMe {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  h5 {
+    margin-bottom: 1em;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .bars {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .bars {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .bars {
+    width: 65%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .bars {
+    width: 57%;
+  }
+
+  .heading {
+    font-size: 2rem;
+  }
+
+  h3 {
+    margin-left: 1em;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .socialMedia {
+    width: 40em;
+  }
+
+  .gallery img {
+    filter: none;
+  }
+
+  .aboutMe {
+    transform: translate(5em);  
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .download-cv {
+    display: none;
+  }
+  .des {
+    width: 100%;
+  }
+}
+
+/* min width media queries */
+
+@media screen and (min-width: 750px) {
+    .nav-toggle-label {
+      display: none;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+
+    }
+
+    .logo {
+      grid-column: 1 / 2;
+    }
+
+    nav {
+      all: unset;
+      grid-column: 3 / 4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    nav ul {
+      display: flex;
+    }
+
+    nav li {
+      margin-left: 3em;
+      margin-bottom: 0;
+    }
+
+    nav a {
+      opacity: 1;
+      font-size: 1rem;
+      position: relative;
+    }
+
+    nav a::before {
+      content: '';
+      display: block;
+      height: 5px;
+      background: black;
+      position: absolute;
+      border-radius: 5px;
+      bottom: -.75em;
+      left: 0;
+      right: 0;
+      transform: scale(0, 1);
+      transition: transform ease-in-out 250ms;
+    }
+
+    nav a:hover::before {
+      transform: scale(1, 1);
+    }
+  }
