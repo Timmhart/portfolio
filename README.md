@@ -27,4 +27,4 @@ Er wordt in dit project gebruik gemaakt van de [MIT](https://github.com/Timmhart
 For this readMe file I've used this source below:
 * [Markdown cheat sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
-For more sources ( I have a lot of them :) ) please click [here](https://github.com/Timmhart/portfolio/wiki/Sources)  <----- Nog aanpassen!!
+For more sources ( I have a lot of them :) ) please click [here](https://github.com/Timmhart/portfolio/wiki/Sources)
